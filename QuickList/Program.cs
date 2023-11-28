@@ -1,4 +1,5 @@
 using QuickList;
+using QuickList.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

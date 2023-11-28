@@ -1,23 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using QuickList.DataAccess;
-
-namespace QuickList;
+﻿namespace QuickList;
 
 public static class AssemblyConfigurator
 {
     public static IServiceCollection ConfigureWebApiServices(this IServiceCollection services)
     {
         services.AddControllersWithViews();
-        return services;
-    }
-
-    public static IServiceCollection ConfigureInfrastructureServices(
-        this IServiceCollection services,
-        IConfiguration configuration)
-    {
-        services.AddDbContext<QuickListContext>(opt => 
-            opt.UseNpgsql(configuration.GetConnectionString("QuickListDbConnectionString")));
-
         return services;
     }
 

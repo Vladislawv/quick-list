@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace QuickList.DataAccess;
+namespace QuickList.Infrastructure.DataAccess;
 
 public class QuickListContext : DbContext
 {
