@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using QuickList.Models;
+using QuickList.Domain.Common;
 
 namespace QuickList.Controllers;
 

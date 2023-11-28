@@ -1,4 +1,4 @@
-namespace QuickList.Models;
+namespace QuickList.Domain.Common;
 
 public class ErrorViewModel
 {
