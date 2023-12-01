@@ -1,0 +1,20 @@
+﻿@using System.Globalization
+@model GoalResponse
+
+<form method="post" id="updateGoalForm" class="top-right" data-id="@Model.Id">
+    <h3 class="text-center">
+        <input type="text" id="goalTitle" value="@Model.Title" oninput="activateSubmit()" required maxlength="30">
+    </h3>
+    
+    <textarea class="area-description" id="goalDescription" oninput="activateSubmit()" required>@Model.Description</textarea>
+    
+    <div class="bottom-right">
+        <button type="button" id="submitButton" class="btn btn-info" style="margin-right: 10px;" onclick="updateGoal()" disabled>Submit</button>
+        <button type="button" class="btn btn-danger" onclick="deleteGoal()">Delete</button>
+    </div>
+</form>
+
+<p class="text-end">
+    Last updated on @Model.LastUpdatedDate.ToString("d MMMM", CultureInfo.InvariantCulture)
+    at @TimeZoneInfo.ConvertTimeFromUtc(Model.LastUpdatedDate, TimeZoneInfo.Local).ToString("h:mm tt", CultureInfo.InvariantCulture)
+</p>
