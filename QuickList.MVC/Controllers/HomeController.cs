@@ -6,23 +6,19 @@ namespace QuickList.MVC.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
+    /// <summary>
+    /// Main page.
+    /// </summary>
+    /// <returns>Returns View with start page</returns>
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
+    /// <summary>
+    /// Error handler
+    /// </summary>
+    /// <returns>Returns ErrorView if something went wrong.</returns>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

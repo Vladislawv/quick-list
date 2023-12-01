@@ -1,8 +1,62 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<div class="greetings">
+    <h3>Welcome to Quick List</h3>
+    <h3>Your personal assistant</h3>
+</div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="notes">
+    <div id="left-bar">
+        
+        <div class="goalsHeader">
+            <form method="post" id="sortGoalsForm" class="dark-theme-form">
+                <div class="form-group">
+                    <select id="sort" class="form-select">
+                        <option value="" disabled selected>Sort by</option>
+                        <option value=".title">Title</option>
+                        <option value=".last-updated-date">Last Updated Date</option>
+                        <option value=".created-date">Created Date</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select id="order" class="form-select">
+                        <option value="" disabled selected>Order by</option>
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+        </div>
+        
+        <div class="nav-buttons">
+            <button id="createGoalButton" class="btn btn-warning rounded-circle" onclick="showCreateGoalForm()">
+                <i class="bi bi-plus"></i>
+            </button>
+                                        
+            <button id="goHomeButton" class="btn btn-info rounded-circle" onclick="goHome()" style="display: none;">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+        </div>
+        
+        <div id="goals"></div>
+    </div>
+
+    <div id="right-content">
+        
+        <div id="defaultContent" class="default-content">
+            <h3>Select an item from the left menu</h3>
+            <h2>Or create the new one</h2>
+        </div>
+
+        <form method="post" id="createGoalForm" class="top-right" style="display: none">
+            <h3 class="text-center">
+                <input type="text" id="goalTitle" placeholder="Title" required maxlength="30">
+            </h3>
+                            
+            <textarea class="area-description" id="goalDescription" placeholder="Description" required></textarea>
+            
+            <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+    </div>
 </div>

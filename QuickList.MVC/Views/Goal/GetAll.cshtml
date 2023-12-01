@@ -1,0 +1,39 @@
+﻿@model IReadOnlyCollection<GoalResponse>
+
+<ul id="todo">
+    @foreach (var goal in Model.Where(x => !x.IsDone).OrderByDescending(x => x.LastUpdatedDate))
+    {
+        <li>
+            <a class="note clickable" data-id="@goal.Id" onclick="setBackgroundOnClick(this)">
+                <span class="title">@goal.Title</span>
+                <span class="last-updated-date">@goal.LastUpdatedDate.ToString("yyyy/MM/dd").Replace(".", "/")</span>
+                <span class="created-date" hidden>@goal.CreatedDate.ToString("yyyy/MM/dd").Replace(".", "/")</span>
+                <span class="description">@goal.Description</span>
+                
+                <span class="checkbox" data-id="@goal.Id">
+                    <input type="checkbox" @(goal.IsDone ? "checked" : "") title="Mark as done" onclick="handleCheckboxClick(event, this)"/>
+                </span>
+            </a>
+        </li>
+    }
+</ul>
+
+<h3 style="margin-top: 10%; margin-bottom: 4%">Done</h3>
+
+<ul id="done">
+    @foreach (var goal in Model.Where(x => x.IsDone).OrderByDescending(x => x.LastUpdatedDate))
+        {
+            <li>
+                <a class="note clickable" data-id="@goal.Id" onclick="setBackgroundOnClick(this)">
+                    <span class="title">@goal.Title</span>
+                    <span class="last-updated-date">@goal.LastUpdatedDate.ToString("yyyy/MM/dd").Replace(".", "/")</span>
+                    <span class="created-date" hidden>@goal.CreatedDate.ToString("yyyy/MM/dd").Replace(".", "/")</span>
+                    <span class="description">@goal.Description</span>
+                    
+                    <span class="checkbox" data-id="@goal.Id">
+                        <input type="checkbox" @(goal.IsDone ? "checked" : "") title="Mark as to do" onclick="handleCheckboxClick(event, this)"/>
+                    </span>
+                </a>
+            </li>
+        }
+</ul>
