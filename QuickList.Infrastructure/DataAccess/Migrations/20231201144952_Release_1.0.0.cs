@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace QuickList.Infrastructure.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class Created_Goals : Migration
+    public partial class Release_100 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

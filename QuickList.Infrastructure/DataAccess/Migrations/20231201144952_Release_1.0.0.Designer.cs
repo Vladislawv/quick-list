@@ -12,8 +12,8 @@ using QuickList.Infrastructure.DataAccess;
 namespace QuickList.Infrastructure.DataAccess.Migrations
 {
     [DbContext(typeof(QuickListContext))]
-    [Migration("20231129102941_Created_Goals")]
-    partial class Created_Goals
+    [Migration("20231201144952_Release_1.0.0")]
+    partial class Release_100
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
